@@ -55,15 +55,14 @@ export default class InlineToolbar extends React.Component<PropsType> {
 		return (
 			<View style={ styles.toolbar } >
 				<ToolbarButton
-					accessibilityLabel={ __( 'Move up' ) }
-					label={ __( 'Move up' ) }
+					title={ __( 'Move up' ) }
 					isDisabled={ ! this.props.canMoveUp }
 					onClick={ this.onUpPressed }
 					icon="arrow-up-alt"
 				/>
 
 				<ToolbarButton
-					label={ __( 'Move down' ) }
+					title={ __( 'Move down' ) }
 					isDisabled={ ! this.props.canMoveDown }
 					onClick={ this.onDownPressed }
 					icon="arrow-down-alt"
@@ -74,7 +73,8 @@ export default class InlineToolbar extends React.Component<PropsType> {
 				<InspectorControls.Slot />
 
 				<ToolbarButton
-					label={ __( 'Remove' ) }
+					title={ __( 'Remove' ) }
+					extraProps={ { hint: __( 'Double tap to remove this block' ) } }
 					onClick={ this.onDeletePressed }
 					icon="trash"
 				/>
