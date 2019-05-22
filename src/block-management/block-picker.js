@@ -16,6 +16,7 @@ import { SVG, Dashicon } from '@wordpress/components';
 import { BottomSheet } from '@wordpress/block-editor';
 import { Component, createElement } from '@wordpress/element';
 import { getBlockTypes, getUnregisteredTypeHandlerName } from '@wordpress/blocks';
+import { sprintf, __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies
@@ -36,6 +37,12 @@ export default class BlockPicker extends Component<PropsType> {
 	render() {
 		const numberOfColumns = this.calculateNumberOfColumns();
 		const bottomPadding = this.props.addExtraBottomPadding && styles.contentBottomPadding;
+		const buttonLabel = ( blockName ) => { 
+			return sprintf(
+			/* translators: accessibility text. %s: block name. */
+			__( '%s block' ),
+			blockName, //already localized
+		)};
 
 		return (
 			<BottomSheet
@@ -59,7 +66,8 @@ export default class BlockPicker extends Component<PropsType> {
 							style={ styles.touchableArea }
 							underlayColor={ 'transparent' }
 							activeOpacity={ .5 }
-							accessibilityLabel={ item.title }
+							accessibilityLabel={ buttonLabel( item.title ) }
+							accessibilityRole={ 'button' }
 							onPress={ () => this.props.onValueSelected( item.name ) }>
 							<View style={ styles.modalItem }>
 								<View style={ styles.modalIconWrapper }>
