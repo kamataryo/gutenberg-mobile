@@ -171,3 +171,4 @@ You might want to use Visual Studio Code as an editor. The project includes the 
 ## License
 
 Gutenberg Mobile is an Open Source project covered by the [GNU General Public License version 2](LICENSE).
+
