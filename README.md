@@ -37,7 +37,7 @@ $ git submodule update
 Before running the demo app, you need to download and install the project dependencies. This is done via the following command:
 
 ```
-nvm install v8.12.0
+nvm use
 yarn install
 ```
 
@@ -171,4 +171,3 @@ You might want to use Visual Studio Code as an editor. The project includes the 
 ## License
 
 Gutenberg Mobile is an Open Source project covered by the [GNU General Public License version 2](LICENSE).
-
